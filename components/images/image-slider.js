@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { useState, useEffect } from "react"
 
 import burgerImg from '@/assets/burger.jpg'
 import curryImg from '@/assets/curry.jpg'
@@ -34,7 +35,7 @@ const images = [
   },
 ]
 
-const ImageSlider = () => {
+const ImageSlideShow = () => {
   const [ currentImageIndex, setCurrentImageIndex ] = useState( 0 )
 
   useEffect( () => {
@@ -59,4 +60,4 @@ const ImageSlider = () => {
   )
 }
 
-export default ImageSlider
+export default ImageSlideShow
