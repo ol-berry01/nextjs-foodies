@@ -37,7 +37,13 @@ const images = [
 const ImageSlider = () => {
   const [ currentImageIndex, setCurrentImageIndex ] = useState( 0 )
 
-  useEffect( () => {}, [] )
+  useEffect( () => {
+    const interval = setInterval( () => {
+      prevIndex < images.length - 1 ? prevIndex + 1 : 0
+    }, 5000)
+
+    return () => clearInterval( interval )
+  }, [] )
 
   return (
     <div className={ classes.slideshow }>
