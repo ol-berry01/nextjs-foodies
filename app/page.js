@@ -1,18 +1,19 @@
 import Link from "next/link";
 
+import classes from './page.module.css'
+
 export default function Home() {
   return (
-    <main>
-      <h1 style={{ color: 'white', textAlign: 'center' }}>
-        Time to get started!
-
+    <>
+      <header className={ classes.header }>
+        <div className={ classes.slideshow }></div>
         <div>
-          <Link href={ 'meals' }>Meals</Link>
-          <Link href={ 'meals/share' }>Meals Share</Link>
-          <Link href={ 'meals/recipe' }>Meals Recipe</Link>
-          <Link href={ 'community' }>Community</Link>
+          <div className={ classes.hero }></div>
+          <div className={ classes.cta }></div>
         </div>
-      </h1>
-    </main>
+      </header>
+      <main>
+      </main>
+    </>
   );
 }
