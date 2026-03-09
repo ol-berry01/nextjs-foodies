@@ -36,7 +36,9 @@ const images = [
 
 const ImageSlider = () => {
   return (
-    <div>image-slider</div>
+    <div className={ classes.slidwshow }>
+      { images.map( ( image, index ) => () )}
+    </div>
   )
 }
 
