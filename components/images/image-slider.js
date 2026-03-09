@@ -36,8 +36,15 @@ const images = [
 
 const ImageSlider = () => {
   return (
-    <div className={ classes.slidwshow }>
-      { images.map( ( image, index ) => () )}
+    <div className={ classes.slideshow }>
+      { images.map( ( image, index ) => (
+        <Image 
+          className={ index === currentImageIndex ? classes.active : '' }
+          key={ index }
+          src={ image.src }
+          alt={ image.alt }
+        />
+      ) )}
     </div>
   )
 }
