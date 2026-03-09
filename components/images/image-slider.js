@@ -41,12 +41,14 @@ const ImageSlideShow = () => {
   const [ currentImageIndex, setCurrentImageIndex ] = useState( 0 )
 
   useEffect( () => {
-    const interval = setInterval( ( prevIndex ) => {
-      prevIndex < images.length - 1 ? prevIndex + 1 : 0
+    const interval = setInterval( () => {
+      setCurrentImageIndex( ( prevIndex ) =>
+        prevIndex < images.length - 1 ? prevIndex + 1 : 0
+      )
     }, 5000)
 
-    return () => clearInterval( interval )
-  }, [] )
+    return () => clearInterval( interval );
+  }, [] );
 
   return (
     <div className={ classes.slideshow }>
