@@ -35,6 +35,10 @@ const images = [
 ]
 
 const ImageSlider = () => {
+  const [ currentImageIndex, setCurrentImageIndex ] = useState( 0 )
+
+  useEffect( () => {}, [] )
+
   return (
     <div className={ classes.slideshow }>
       { images.map( ( image, index ) => (
