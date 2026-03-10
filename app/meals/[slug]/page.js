@@ -5,8 +5,8 @@ import { getMeal } from '@/lib/meals'
 
 import classes from './page.module.css'
 
-const MealDetailsPage = () => {
-  const meal = getMeal()
+const MealDetailsPage = ( { params } ) => {
+  const meal = getMeal( params.slug )
 
   return (
     <>
@@ -15,7 +15,7 @@ const MealDetailsPage = () => {
           <Image fill />
         </div>
         <div className={ classes.headerText }>
-          <h1>TITLE</h1>
+          <h1>{ meal.title }</h1>
           <p className={ classes.creator }>
             by <Link href={ `mailto:${ 'email'}` }>NAME</Link>
           </p>
