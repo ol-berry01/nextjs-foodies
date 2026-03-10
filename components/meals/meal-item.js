@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import classes from './meal-item.module.css'
 
-const MealItem = () => {
+const MealItem = ( { title, slug, image, summary, creator } ) => {
   return (
     <article className={ classes.meal }>
       <header>
