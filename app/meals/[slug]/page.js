@@ -18,7 +18,11 @@ const MealsSlug = () => {
           <p className={ classes.summary }>SUMMARY</p>
         </div>
       </header>
-      <main>MealsSlug</main>
+      <main>
+        <p className={ classes.instructions } dangerouslySetInnerHTML={ {
+          __html: '...'
+        } }></p>
+      </main>
     </>
   )
 }
