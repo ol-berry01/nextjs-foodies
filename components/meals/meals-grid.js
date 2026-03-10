@@ -1,3 +1,5 @@
+import classes from './meals-grid.module.css';
+
 const MealsGrid = ( { meals } ) => {
   return (
     <ul>
