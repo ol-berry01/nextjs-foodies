@@ -8,6 +8,8 @@ import classes from './page.module.css'
 const MealDetailsPage = ( { params } ) => {
   const meal = getMeal( params.slug )
 
+  meal.instructions = meal.instructions.replaceAll( /\n/g, '<br>' )
+
   return (
     <>
       <header className={classes.header}>
