@@ -1,9 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { getMeal } from '@/lib/meals'
+
 import classes from './page.module.css'
 
-const MealsSlug = () => {
+const MealDetailsPage = () => {
+  const meal = getMeal()
+
   return (
     <>
       <header className={classes.header}>
@@ -27,4 +31,4 @@ const MealsSlug = () => {
   )
 }
 
-export default MealsSlug
+export default MealDetailsPage
