@@ -2,5 +2,7 @@
 /public/images
 .next/*
 
+*.db
+
 node_modules
 package-lock.json
