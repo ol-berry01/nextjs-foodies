@@ -1,12 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import NotFound from '../not-found'
 import { getMeal } from '@/lib/meals'
 
 import classes from './page.module.css'
 
 const MealDetailsPage = ( { params } ) => {
   const meal = getMeal( params.slug )
+
+  if ( !meal ) {
+    return <NotFound />
+  }
 
   meal.instructions = meal.instructions.replaceAll( /\n/g, '<br>' )
 
