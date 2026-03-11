@@ -3,6 +3,10 @@ import ImagePicker from '@/components/meals/image-picker'
 import classes from './page.module.css'
 
 const ShareMealPage = () => {
+  const shareMealHandler = async ( event ) => {
+    'use server'
+  }
+
   return (
     <>
       <header className={ classes.main }>
@@ -10,7 +14,7 @@ const ShareMealPage = () => {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className={ classes.main }>
-        <form className={ classes.form }>
+        <form className={ classes.form } action={ shareMealHandler }>
           <div className={ classes.row }>
             <p>
               <label htmlFor="name">Your name</label>
