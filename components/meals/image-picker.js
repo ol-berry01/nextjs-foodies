@@ -1,6 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import { useRef } from 'react'
+
+import Image from 'next/image'
 
 import classes from './image-picker.module.css'
 
@@ -36,6 +39,7 @@ const ImagePicker = ( { label, name } ) => {
       <div className={ classes.controls }>
         <div className={ classes.preview }>
           { !pickedImage && <p>No image picked yet.</p> }
+          { pickedImage && <Image src={ pickedImage } alt='Image selected by the user' fill /> }
         </div>
         <input 
           className={ classes.input }
