@@ -20,12 +20,23 @@ const ImagePicker = ( { label, name } ) => {
       setPickedImage( null )
       return
     }
+
+    const fileReader = new FileReader()
+
+    fileReader.onload = () => {
+      setPickedImage( fileReader.result)
+    }
+    
+    fileReader.readAsDataURL( file )
   }
 
   return (
     <div className={ classes.picker }>
       <label htmlFor={ name }>{ label }</label>
       <div className={ classes.controls }>
+        <div className={ classes.preview }>
+          { !pickedImage && <p>No image picked yet.</p> }
+        </div>
         <input 
           className={ classes.input }
           type="file" 
