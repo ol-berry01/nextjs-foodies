@@ -49,6 +49,7 @@ const ImagePicker = ( { label, name } ) => {
           accept="image/png, image/jpeg" 
           ref={ imageInput}
           onChange={ handleImageChange }
+          reuired
         />
         <button 
           className={ classes.button } 
