@@ -6,6 +6,19 @@ import { getMeal } from '@/lib/meals'
 
 import classes from './page.module.css'
 
+export async function generateMetadata( { params } ) {
+  const meal = getMeal( params.slug )
+
+  if ( !meal ) {
+    return <NotFound />
+  }
+
+  return {
+    title: `${meal.title} | NextLevel Foodies`,
+    description: meal.summary,
+  }
+}
+
 const MealDetailsPage = ( { params } ) => {
   const meal = getMeal( params.slug )
 
